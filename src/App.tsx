@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar";
-import Products from "./components/Products";
+import Product from "./components/Product";
 
 export default function App(): React.ReactElement {
   return (
     <div>
       <Navbar />
-      <Products />
+      <button className="btn btn-primary m-3">Reset</button>
+      <Product />
     </div>
   );
 }
