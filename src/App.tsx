@@ -3,7 +3,7 @@ import Products from "./components/Products";
 import { useState } from "react";
 import { IProduct } from "./types";
 
-export default function App(): React.ReactElement {
+export default function App() {
   const [products, setProducts] = useState<IProduct[]>([
     { id: 1, quantity: 4 },
     { id: 2, quantity: 0 },
@@ -39,7 +39,7 @@ export default function App(): React.ReactElement {
   }
   return (
     <>
-      <Navbar productsCount={products.length} />
+      <Navbar products={products} />
       <Products
         products={products}
         onDelete={handleDelete}
