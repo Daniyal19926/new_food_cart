@@ -1,9 +1,10 @@
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import { useState } from "react";
+import { IProduct } from "./types";
 
 export default function App(): React.ReactElement {
-  const [products, setProducts] = useState([
+  const [products, setProducts] = useState<IProduct[]>([
     { id: 1, quantity: 4 },
     { id: 2, quantity: 0 },
     { id: 3, quantity: 7 },

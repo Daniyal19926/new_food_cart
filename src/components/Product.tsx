@@ -1,6 +1,6 @@
-interface Porps {
-  id: number;
-  quantity: number;
+import { IProduct } from "../types";
+
+interface Porps extends IProduct {
   onDelete(id: number): void;
   onIncrement(id: number): void;
   onDecrement(id: number): void;

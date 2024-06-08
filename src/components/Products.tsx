@@ -1,8 +1,5 @@
 import Product from "./Product";
-interface IProduct {
-  id: number;
-  quantity: number;
-}
+import { IProduct } from "../types";
 interface Props {
   products: IProduct[];
   onDelete(id: number): void;
