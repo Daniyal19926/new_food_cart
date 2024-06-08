@@ -11,20 +11,26 @@ interface Props {
   onReset(): void;
 }
 
-export default function Products(props: Props) {
+export default function Products({
+  products,
+  onDelete,
+  onIncrement,
+  onDecrement,
+  onReset,
+}: Props) {
   return (
     <div>
-      <button onClick={props.onReset} className="btn btn-primary m-2">
+      <button onClick={onReset} className="btn btn-primary m-2">
         Reset
       </button>
-      {props.products.map((product) => (
+      {products.map((product) => (
         <Product
           key={product.id}
           id={product.id}
           quantity={product.quantity}
-          onDelete={props.onDelete}
-          onIncrement={props.onIncrement}
-          onDecrement={props.onDecrement}
+          onDelete={onDelete}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
         />
       ))}
     </div>

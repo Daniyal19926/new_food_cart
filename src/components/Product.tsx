@@ -6,29 +6,29 @@ interface Porps {
   onDecrement(id: number): void;
 }
 
-export default function Product(props: Porps) {
+export default function Product({
+  id,
+  quantity,
+  onDelete,
+  onIncrement,
+  onDecrement,
+}: Porps) {
   let badgeClasses = "m-2 badge text-bg-";
-  badgeClasses += props.quantity === 0 ? "warning" : "primary";
-  const badgeText = props.quantity === 0 ? "zero" : props.quantity;
+  badgeClasses += quantity === 0 ? "warning" : "primary";
+  const badgeText = quantity === 0 ? "zero" : quantity;
   return (
     <div className="p-3">
       <span className={badgeClasses}>{badgeText}</span>
-      <button
-        onClick={() => props.onIncrement(props.id)}
-        className="btn btn-secondary m-2"
-      >
+      <button onClick={() => onIncrement(id)} className="btn btn-secondary m-2">
         +
       </button>
       <button
-        onClick={() => props.onDecrement(props.id)}
+        onClick={() => onDecrement(id)}
         className="btn btn-secondary me-2"
       >
         -
       </button>
-      <button
-        onClick={() => props.onDelete(props.id)}
-        className="btn btn-danger"
-      >
+      <button onClick={() => onDelete(id)} className="btn btn-danger">
         x
       </button>
     </div>

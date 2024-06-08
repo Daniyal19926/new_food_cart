@@ -38,7 +38,7 @@ export default function App(): React.ReactElement {
   }
   return (
     <>
-      <Navbar products={products} />
+      <Navbar productsCount={products.length} />
       <Products
         products={products}
         onDelete={handleDelete}
