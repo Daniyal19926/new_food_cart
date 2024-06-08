@@ -1,3 +1,11 @@
+import Navbar from "./components/Navbar";
+import Products from "./components/Products";
+
 export default function App(): React.ReactElement {
-  return <h1>This this is a food cart</h1>;
+  return (
+    <div>
+      <Navbar />
+      <Products />
+    </div>
+  );
 }
